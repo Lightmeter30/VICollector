@@ -39,7 +39,7 @@
 
 ## Task 1：实现 session 目录管理
 
-- [ ] 先写失败测试 `SessionDirectoryManagerTest.kt`：
+- [x] 先写失败测试 `SessionDirectoryManagerTest.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -59,7 +59,7 @@ class SessionDirectoryManagerTest {
 }
 ```
 
-- [ ] 运行失败测试：
+- [x] 运行失败测试：
 
 ```powershell
 cd VICollector
@@ -68,7 +68,7 @@ cd VICollector
 
 期望：因 `SessionDirectoryManager` 未定义而失败。
 
-- [ ] 写入 `SessionDirectoryManager.kt`：
+- [x] 写入 `SessionDirectoryManager.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -89,7 +89,7 @@ class SessionDirectoryManager(private val datasetRoot: File) {
 }
 ```
 
-- [ ] 写入 `FileNameGenerator.kt`：
+- [x] 写入 `FileNameGenerator.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -99,11 +99,11 @@ class FileNameGenerator {
 }
 ```
 
-- [ ] 运行测试，期望成功。
+- [x] 运行测试，期望成功。
 
 ## Task 2：实现 IMU CSV writer
 
-- [ ] 写入测试 `ImuCsvWriterTest.kt`：
+- [x] 写入测试 `ImuCsvWriterTest.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -129,7 +129,7 @@ class ImuCsvWriterTest {
 }
 ```
 
-- [ ] 写入 `ImuCsvWriter.kt`：
+- [x] 写入 `ImuCsvWriter.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -165,7 +165,7 @@ class ImuCsvWriter(file: File, private val type: SensorType) : Closeable {
 }
 ```
 
-- [ ] 验证：
+- [x] 验证：
 
 ```powershell
 cd VICollector
@@ -176,7 +176,7 @@ cd VICollector
 
 ## Task 3：实现图像 timestamp CSV writer
 
-- [ ] 写入 `ImageTimestampCsvWriter.kt`：
+- [x] 写入 `ImageTimestampCsvWriter.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -208,7 +208,7 @@ class ImageTimestampCsvWriter(file: File) : Closeable {
 }
 ```
 
-- [ ] 编译验证：
+- [x] 编译验证：
 
 ```powershell
 cd VICollector
@@ -219,7 +219,7 @@ cd VICollector
 
 ## Task 4：实现 JSON 元数据 writer
 
-- [ ] 写入测试 `MetadataWriterTest.kt`：
+- [x] 写入测试 `MetadataWriterTest.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -239,7 +239,7 @@ class MetadataWriterTest {
 }
 ```
 
-- [ ] 写入 `MetadataWriter.kt`：
+- [x] 写入 `MetadataWriter.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -255,11 +255,11 @@ class MetadataWriter {
 }
 ```
 
-- [ ] 验证测试成功。
+- [x] 验证测试成功。
 
 ## Task 5：实现异步写盘队列
 
-- [ ] 写入 `AsyncWriteQueue.kt`：
+- [x] 写入 `AsyncWriteQueue.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -296,11 +296,11 @@ class AsyncWriteQueue : Closeable {
 }
 ```
 
-- [ ] 约束检查：Camera callback 和 Sensor callback 后续只能调用 `enqueue` 或写入内存 buffer，不能直接写图片和 CSV。
+- [x] 约束检查：Camera callback 和 Sensor callback 后续只能调用 `enqueue` 或写入内存 buffer，不能直接写图片和 CSV。
 
 ## 阶段验收
 
-- [ ] `cd VICollector; .\gradlew.bat testDebugUnitTest assembleDebug` 成功。
-- [ ] session 目录结构与 `VICollectorDataset/...` 约定一致。
-- [ ] CSV 字段为 `timestamp_ns`，单位为 nanoseconds。
-- [ ] writer 均可 `flush()` 和 `close()`。
+- [x] `cd VICollector; .\gradlew.bat testDebugUnitTest assembleDebug` 成功。
+- [x] session 目录结构与 `VICollectorDataset/...` 约定一致。
+- [x] CSV 字段为 `timestamp_ns`，单位为 nanoseconds。
+- [x] writer 均可 `flush()` 和 `close()`。
