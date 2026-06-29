@@ -1,0 +1,10 @@
+# VICollector Kalibr configuration placeholder.
+# Fill camera intrinsics, camera-IMU extrinsics, and time offset after calibration.
+camera_model: pinhole
+distortion_model: radtan
+target_type: aprilgrid
+target_rows: 6
+target_cols: 6
+target_size_m: 0.088
+target_spacing_ratio: 0.3
+timestamp_unit: nanoseconds

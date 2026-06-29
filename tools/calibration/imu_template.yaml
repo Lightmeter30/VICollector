@@ -1,0 +1,9 @@
+imu0:
+  rostopic: /imu
+  update_rate: 200.0
+  accelerometer_noise_density: accel_noise_density
+  accelerometer_random_walk: accel_random_walk
+  gyroscope_noise_density: gyro_noise_density
+  gyroscope_random_walk: gyro_random_walk
+  model: calibrated
+  timestamp_unit: nanoseconds
