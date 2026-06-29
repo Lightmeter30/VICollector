@@ -38,7 +38,7 @@
 
 ## Task 1：实现 IMU 频率估计
 
-- [ ] 写入 `ImuRateEstimatorTest.kt`：
+- [x] 写入 `ImuRateEstimatorTest.kt`：
 
 ```kotlin
 package com.example.vicollector.imu
@@ -56,7 +56,7 @@ class ImuRateEstimatorTest {
 }
 ```
 
-- [ ] 写入 `ImuRateEstimator.kt`：
+- [x] 写入 `ImuRateEstimator.kt`：
 
 ```kotlin
 package com.example.vicollector.imu
@@ -78,7 +78,7 @@ class ImuRateEstimator(private val maxSamples: Int = 256) {
 }
 ```
 
-- [ ] 验证：
+- [x] 验证：
 
 ```powershell
 cd VICollector
@@ -89,7 +89,7 @@ cd VICollector
 
 ## Task 2：实现 IMU Controller
 
-- [ ] 写入 `ImuConfig.kt`：
+- [x] 写入 `ImuConfig.kt`：
 
 ```kotlin
 package com.example.vicollector.imu
@@ -101,7 +101,7 @@ data class ImuConfig(
 )
 ```
 
-- [ ] 写入 `SensorSelector.kt`：
+- [x] 写入 `SensorSelector.kt`：
 
 ```kotlin
 package com.example.vicollector.imu
@@ -115,7 +115,7 @@ class SensorSelector(private val sensorManager: SensorManager) {
 }
 ```
 
-- [ ] 写入 `ImuController.kt`：
+- [x] 写入 `ImuController.kt`：
 
 ```kotlin
 package com.example.vicollector.imu
@@ -160,7 +160,7 @@ class ImuController(
 }
 ```
 
-- [ ] 验证：
+- [x] 验证：
 
 ```powershell
 cd VICollector
@@ -171,7 +171,7 @@ cd VICollector
 
 ## Task 3：实现 Camera2 基础配置与后置主摄选择
 
-- [ ] 写入 `CameraConfig.kt`：
+- [x] 写入 `CameraConfig.kt`：
 
 ```kotlin
 package com.example.vicollector.camera
@@ -187,7 +187,7 @@ data class CameraConfig(
 )
 ```
 
-- [ ] 写入 `CameraDeviceSelector.kt`：
+- [x] 写入 `CameraDeviceSelector.kt`：
 
 ```kotlin
 package com.example.vicollector.camera
@@ -206,13 +206,13 @@ class CameraDeviceSelector(private val cameraManager: CameraManager) {
 }
 ```
 
-- [ ] 写入 `CameraCapabilityReader.kt`，至少读取支持分辨率、FPS range、sensor size、focal length、exposure range。
+- [x] 写入 `CameraCapabilityReader.kt`，至少读取支持分辨率、FPS range、sensor size、focal length、exposure range。
 
-- [ ] 验证编译成功。
+- [x] 验证编译成功。
 
 ## Task 4：实现 ImageReader 和 JPEG 入队
 
-- [ ] 写入 `ImageWriter.kt`：
+- [x] 写入 `ImageWriter.kt`：
 
 ```kotlin
 package com.example.vicollector.storage
@@ -227,7 +227,7 @@ class ImageWriter {
 }
 ```
 
-- [ ] 写入 `ImageReaderManager.kt`：
+- [x] 写入 `ImageReaderManager.kt`：
 
 ```kotlin
 package com.example.vicollector.camera
@@ -252,11 +252,11 @@ class ImageReaderManager(private val config: CameraConfig) {
 }
 ```
 
-- [ ] 约束检查：`onImage` 中只允许入队与记录元数据，不允许直接写文件。
+- [x] 约束检查：`onImage` 中只允许入队与记录元数据，不允许直接写文件。
 
 ## Task 5：实现 CameraController 最小闭环
 
-- [ ] `CameraController.startCamera()` 必须完成：
+- [x] `CameraController.startCamera()` 必须完成：
   - 检查 Camera 权限。
   - 启动 `HandlerThread`。
   - 选择后置主摄。
@@ -265,21 +265,21 @@ class ImageReaderManager(private val config: CameraConfig) {
   - 创建 `CameraCaptureSession`。
   - 创建 repeating request。
 
-- [ ] `CameraController.stopCamera()` 必须完成：
+- [x] `CameraController.stopCamera()` 必须完成：
   - 停止 repeating。
   - 关闭 session。
   - 关闭 camera device。
   - 关闭 image reader。
   - 停止 handler thread。
 
-- [ ] `CaptureRequestFactory` 必须设置：
+- [x] `CaptureRequestFactory` 必须设置：
   - `CONTROL_MODE_AUTO`
   - `CONTROL_AE_TARGET_FPS_RANGE` 尽量靠近 30 FPS
   - JPEG 输出 surface
 
 ## Task 6：真机 30 秒采集验证
 
-- [ ] 构建：
+- [x] 构建：
 
 ```powershell
 cd VICollector
